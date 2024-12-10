@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Devtree con express",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "node --watch index.js",
-    "serve": "nodemon index.js"
+    "serve": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [
     "expess",
@@ -19,6 +20,9 @@
     "express": "^4.21.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }

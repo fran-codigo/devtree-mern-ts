@@ -2,9 +2,9 @@ import express from 'express';
 
 const app = express();
 
-// Roting
+// Routing
 app.get('/', (req, res) => {
-  res.send('hola mundo en express');
+  res.send('hola mundo en express TS');
 });
 
 const PORT = process.env.PORT || 4000;
