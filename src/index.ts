@@ -1,14 +1,7 @@
-import express from 'express';
-
-const app = express();
-
-// Routing
-app.get('/', (req, res) => {
-  res.send('hola mundo en express TS');
-});
+import server from './server';
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log('Servidor Funcionando en el puerto:', PORT);
 });
