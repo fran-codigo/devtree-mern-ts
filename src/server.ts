@@ -1,11 +1,12 @@
-import express from 'express';
+import express, { json } from 'express';
+import AuthRoutes from './routes/auth.routes';
 
 const app = express();
 
+// Leer datos de formulario
+app.use(json())
+
 // Routing
-app.get('/', (req, res) => {
-  res.send('hola mundo en express TS');
-});
+app.use('/api', AuthRoutes);
 
-
-export default app
+export default app;
