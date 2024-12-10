@@ -7,6 +7,8 @@ app.get('/', (req, res) => {
   res.send('hola mundo en express');
 });
 
-app.listen(4000, () => {
-  console.log('Servidor Funcionando');
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log('Servidor Funcionando en el puerto:', PORT);
 });
