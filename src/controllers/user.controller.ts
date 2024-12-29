@@ -113,8 +113,6 @@ export const uploadImage = async (req: Request, res: Response) => {
 
   try {
     form.parse(req, (error, fields, files) => {
-      console.log(files.file[0].filepath);
-
       cloudinary.uploader.upload(
         files.file[0].filepath,
         { public_id: uuid() },
@@ -128,7 +126,11 @@ export const uploadImage = async (req: Request, res: Response) => {
           }
 
           if (result) {
-            console.log(result.secure_url);
+            req.user.image = result.secure_url;
+            await req.user.save();
+            res.json({
+              image: result.secure_url,
+            });
           }
         }
       );
