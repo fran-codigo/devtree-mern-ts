@@ -5,6 +5,7 @@ import {
   getUser,
   login,
   updateProfile,
+  uploadImage,
 } from '../controllers/user.controller';
 import { handleUnputErrors } from '../middleware/validation';
 import { authenticate } from '../middleware/auth';
@@ -39,5 +40,7 @@ router.patch(
   authenticate,
   updateProfile
 );
+
+router.post('/user/image', authenticate, uploadImage);
 
 export default router;
